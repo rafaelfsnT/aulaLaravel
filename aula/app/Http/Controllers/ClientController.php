@@ -44,7 +44,13 @@ class ClientController extends Controller
      */
     public function show(string $id)
     {
-        //
+        //buscar o cliente pelo id no banco de dados
+        $client = Client::find($id);
+
+        // retornar os dados do cliente em uma view (show)
+        return view('clients.show', [
+            'client' => $client
+            ]);
     }
 
     /**

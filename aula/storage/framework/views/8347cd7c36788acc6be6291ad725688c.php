@@ -20,17 +20,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($clients as $client)
+                    <?php $__currentLoopData = $clients; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $client): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
-                            <td>{{ $client->id}} </td>
-                            <td><a href="{{route('clients.show', $client)}}">
-                                {{ $client->nome}}
+                            <td><?php echo e($client->id); ?> </td>
+                            <td><a href="<?php echo e(route('clients.show', $client)); ?>">
+                                <?php echo e($client->nome); ?>
+
                             </a>
                             </td>
-                            <td>{{ $client->endereco}}</td>
+                            <td><?php echo e($client->endereco); ?></td>
                             <td></td>
                         </tr>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </tbody>
             </table>
         </div>
@@ -38,4 +39,4 @@
     </nav>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
-</html>
+</html><?php /**PATH /Users/unialfa/Documents/aula/resources/views/clients/index.blade.php ENDPATH**/ ?>
